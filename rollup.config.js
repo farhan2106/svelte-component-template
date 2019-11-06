@@ -108,7 +108,7 @@ const outputs = [
     input: 'src/SomeComponent.ts',
     output: {
       sourcemap: true,
-      dir: 'public',
+      dir: 'public/umd',
       format: 'umd',
       name: 'SomeComponent'
     },
@@ -118,5 +118,20 @@ const outputs = [
     }
   }
 ]
+
+if (production) {
+  outputs.push({
+    input: 'src/SomeComponent.ts',
+    output: {
+      sourcemap: true,
+      dir: 'public/esm',
+      format: 'esm'
+    },
+    plugins: getPlugins(false),
+    watch: {
+      clearScreen: false
+    }
+  })
+}
 
 export default outputs;
