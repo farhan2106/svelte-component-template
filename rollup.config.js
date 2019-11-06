@@ -64,11 +64,9 @@ const getPlugins = (withCopy = false) => [
     babelrc: false,
     ...babelConfig.default,
     extensions: ['.js', '.mjs', '.html', '.svelte', '.ts'],
-    exclude: [
-      'node_modules/core-js/**',
-      'node_modules/regenerator-runtime/**',
-      // 'node_modules/page/**', // Fix: https://rollupjs.org/guide/en/#error-name-is-not-exported-by-module
-    ]
+    // exclude: [
+    //   // 'node_modules/page/**', // Fix: https://rollupjs.org/guide/en/#error-name-is-not-exported-by-module
+    // ]
   }),
 
   // Fix: https://rollupjs.org/guide/en/#error-name-is-not-exported-by-module
@@ -85,9 +83,7 @@ const getPlugins = (withCopy = false) => [
     mainFields: ['module', 'main', 'jsnext:main'],
     dedupe: importee =>
       importee === "svelte" ||
-      importee.startsWith("svelte/") ||
-      importee === "core-js" ||
-      importee.startsWith("core-js/")
+      importee.startsWith("svelte/")
   }),
 
   commonjs({
