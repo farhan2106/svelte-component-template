@@ -2,8 +2,6 @@
 
 Svelte skeleton project for building UI componenets
 
-* ESM & SystemJS differential loading. Configured to run on IE11.
-* Dyamic imports via [Rollup](https://rollupjs.org/guide/en/)
 * Unit test via [Jest](https://jestjs.io/)
 * Typescript enabled via [svelte-preprocess](https://www.npmjs.com/package/svelte-preprocess)
 * Schematics / Generators via [plop](https://plopjs.com/)

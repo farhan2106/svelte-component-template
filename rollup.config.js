@@ -105,12 +105,12 @@ const getPlugins = (withCopy = false) => [
 
 const outputs = [
   {
-    input: 'src/lib.ts',
+    input: 'src/SomeComponent.ts',
     output: {
       sourcemap: true,
       dir: 'public',
       format: 'umd',
-      name: 'UILib'
+      name: 'SomeComponent'
     },
     plugins: getPlugins(true),
     watch: {
