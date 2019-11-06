@@ -105,11 +105,12 @@ const getPlugins = (withCopy = false) => [
 
 const outputs = [
   {
-    input: 'src/index.ts',
+    input: 'src/lib.ts',
     output: {
       sourcemap: true,
-      dir: 'public/esm',
-      format: 'esm',
+      dir: 'public',
+      format: 'umd',
+      name: 'UILib'
     },
     plugins: getPlugins(true),
     watch: {
@@ -117,21 +118,5 @@ const outputs = [
     }
   }
 ]
-
-if (production) {
-  outputs.push({
-    input: 'src/index.ts',
-    output: {
-      sourcemap: true,
-      dir: 'public/system',
-      format: 'system',
-      strict: false
-    },
-    plugins: getPlugins(),
-    watch: {
-      clearScreen: false
-    },
-  })
-}
 
 export default outputs;

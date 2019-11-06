@@ -1,21 +1,12 @@
 <script lang="typescript">
-  export let name: any;
+  import Navbar from './components/Navbar.svelte'
 
-  let libProps: any = {
-    component: import('./components/Navbar.svelte'),
-    name
-  };
+  export let name: any;
 </script>
 
 <style>
 </style>
 
 <template>
-  {#await libProps.component}
-    <p>loading...</p>
-  {:then x}
-    <svelte:component this={x.default} {...libProps} />
-  {:catch error}
-    <p style="color: red">{error.message}</p>
-  {/await}
+  <Navbar />
 </template>
